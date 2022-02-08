@@ -9,10 +9,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "copy-help": "mo-copy -h"
+    "copy-help": "more-copy -h"
   },
   "bin": {
-    "mo-copy": "bin/index.js"
+    "mcp": "bin/index.js"
   },
   "keywords": [
     "copy"

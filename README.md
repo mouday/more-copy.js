@@ -1,4 +1,4 @@
-# mo-copy
+# more-copy
 
 指定文件模板生成到指定的文件目录下
 
@@ -8,7 +8,7 @@
 
 ```bash
 # 建议全局安装
-npm i mo-copy -g
+npm i more-copy -g
 ```
 
 ## 使用
@@ -21,7 +21,7 @@ npm i mo-copy -g
 ```
 
 ```bash
-$ mo-copy -i template.js -o demo.js
+$ mcp -i template.js -o demo.js
 ```
 
 ## 模板
@@ -35,11 +35,11 @@ https://nunjucks.bootcss.com/templating.html
 
 ## 配置
 
-当前目录下可以配置 mo-copy.config.js
+当前目录下可以配置 more-copy.config.js
 
 ```js
 // 插件示例
-const { mkdirPlugin, nowPlugin, parsePlugin } = require('mo-copy');
+const { mkdirPlugin, nowPlugin, parsePlugin } = require('more-copy');
 
 // 使用自定义插件
 const customPlugin = require('./custom-plugin.js');
