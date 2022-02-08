@@ -1,8 +1,11 @@
 /**
  * version
  */
+const fs = require('fs');
 
-const VERSION = '0.0.1';
+const packageJsonData = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+
+const VERSION = packageJsonData.version;
 
 module.exports = {
   VERSION,

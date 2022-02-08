@@ -1,4 +1,4 @@
-# more-copy
+# more-copy.js
 
 指定文件模板生成到指定的文件目录下
 
@@ -54,7 +54,7 @@ module.exports = {
 
 ## 自定义插件
 
-custom-plugin.js
+custom-plugin.js 用来处理模板入参
 
 ```js
 module.exports = function (options) {

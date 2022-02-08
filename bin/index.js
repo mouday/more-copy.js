@@ -6,7 +6,7 @@ const {
   getCommandOptions,
   renderTemplate,
   getCustomConfig,
-} = require('mo-copy');
+} = require('more-copy');
 
 // 读取用户参数
 let options = getCommandOptions();
