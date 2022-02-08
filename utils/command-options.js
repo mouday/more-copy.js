@@ -19,6 +19,7 @@ function getCommandOptions() {
   // console.log(process.argv.slice(2, -1));
   // console.log(process.argv[process.argv.length - 1]);
   program.parse(process.argv);
+  
   if(process.argv.length < 4){
     throw new Error('params not enough');
   }

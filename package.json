@@ -10,7 +10,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "copy-help": "mcp -h"
+    "copy-help": "mcp -h",
+    "echo": "echo",
+    "mcp:component": "mcp template/component/component.* "
   },
   "bin": {
     "mcp": "bin/index.js"

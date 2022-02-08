@@ -33,7 +33,7 @@ for (let input_filename of options.input) {
   let data = { ...options, input_filename, output_filename };
   if (config.plugins) {
     for (let plugin of config.plugins) {
-      data = plugin.process(data);
+      data = plugin(data);
     }
   }
 
