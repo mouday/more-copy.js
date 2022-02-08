@@ -55,8 +55,6 @@ const Plugin = require('./plugin.js');
 
 class CustomPlugin extends Plugin {
   process_options(options) {
-    let now = new Date();
-
     options.custom = {
       name: 'Tom',
     };
@@ -67,5 +65,3 @@ class CustomPlugin extends Plugin {
 
 module.exports = CustomPlugin;
 ```
-
-plugin 需要更换为 class，支持传参

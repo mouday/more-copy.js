@@ -1,6 +1,6 @@
 {
   "name": "more-copy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "copy template generate code file",
   "main": "index.js",
   "dependencies": {
