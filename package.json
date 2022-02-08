@@ -1,0 +1,22 @@
+{
+  "name": "more-copy",
+  "version": "1.0.0",
+  "description": "copy template generate code file",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "copy-help": "mo-copy -h"
+  },
+  "bin": {
+    "mo-copy": "bin/index.js"
+  },
+  "keywords": [
+    "copy"
+  ],
+  "author": "Peng Shiyu",
+  "license": "ISC"
+}
