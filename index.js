@@ -4,17 +4,21 @@
 const { getCommandOptions } = require('./utils/command-options.js');
 const { renderTemplate } = require('./utils/render.js');
 const { getCustomConfig } = require('./utils/custom-config.js');
+const { writeToFile } = require('./utils/write-to-file.js');
 
-const mkdirPlugin = require('./plugins/mkdir-plugin.js');
-const nowPlugin = require('./plugins/now-plugin.js');
-const parsePlugin = require('./plugins/parse-plugin.js');
+const MkdirPlugin = require('./plugins/mkdir-plugin.js');
+const TimePlugin = require('./plugins/time-plugin.js');
+const ParsePlugin = require('./plugins/parse-plugin.js');
+const Plugin = require('./plugins/plugin.js');
 
 module.exports = {
   getCommandOptions,
   renderTemplate,
   getCustomConfig,
+  writeToFile,
 
-  mkdirPlugin,
-  nowPlugin,
-  parsePlugin
+  MkdirPlugin,
+  TimePlugin,
+  ParsePlugin,
+  Plugin
 };

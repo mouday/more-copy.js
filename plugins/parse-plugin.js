@@ -1,7 +1,15 @@
 const path = require('path');
+const Plugin = require('./plugin.js');
 
-module.exports = function (options) {
-  options.parsed_input = path.parse(options.input_filename);
-  options.parsed_output = path.parse(options.output_filename);
-  return options;
-};
+class ParsePlugin extends Plugin {
+  process_options(options) {
+    options.parse = {
+      input: path.parse(options.input),
+      output: path.parse(options.output),
+    };
+
+    return options;
+  }
+}
+
+module.exports = ParsePlugin;

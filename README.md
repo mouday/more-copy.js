@@ -2,8 +2,6 @@
 
 指定文件模板生成到指定的文件目录下
 
-支持文件或文件夹
-
 ## 安装
 
 ```bash
@@ -13,15 +11,11 @@ npm i more-copy -g
 
 ## 使用
 
-参数
-
-```
--i --input  输入文件路径
--o --output 输出文件路径
-```
-
 ```bash
-$ mcp -i template.js -o demo.js
+$ mcp [模板路径] [输出路径]
+
+eg:
+$ mcp template.js demo.js
 ```
 
 ## 模板
@@ -39,16 +33,16 @@ https://nunjucks.bootcss.com/templating.html
 
 ```js
 // 插件示例
-const { mkdirPlugin, nowPlugin, parsePlugin } = require('more-copy');
+const { MkdirPlugin, ParsePlugin, TimePlugin } = require('more-copy');
 
 // 使用自定义插件
-const customPlugin = require('./custom-plugin.js');
+const CustomPlugin = require('./custom-plugin.js');
 
 module.exports = {
   // 开启调试
   debug: true,
   // 使用插件，有先后顺序
-  plugins: [nowPlugin, parsePlugin, mkdirPlugin, customPlugin],
+  plugins: [new CustomPlugin()],
 };
 ```
 
@@ -57,10 +51,21 @@ module.exports = {
 custom-plugin.js 用来处理模板入参
 
 ```js
-module.exports = function (options) {
-  // 做一些操作后，返回options
-  return options;
-};
+const Plugin = require('./plugin.js');
+
+class CustomPlugin extends Plugin {
+  process_options(options) {
+    let now = new Date();
+
+    options.custom = {
+      name: 'Tom',
+    };
+
+    return options;
+  }
+}
+
+module.exports = CustomPlugin;
 ```
 
 plugin 需要更换为 class，支持传参

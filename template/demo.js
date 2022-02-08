@@ -1,3 +1,3 @@
 hi 
-{{parsed_output.name}}
-{{now.fullYear}}-{{now.month}}-{{now.date}}
+{{parse.output.name}}
+{{time.fullYear}}-{{time.month}}-{{time.date}}

@@ -1,10 +1,19 @@
 const fs = require('fs');
+const path = require('path');
 
-module.exports = function (options) {
-  // 自动创建目录
-  if (options.parsed_output.dir && !fs.existsSync(options.parsed_output.dir)) {
-    fs.mkdirSync(options.parsed_output.dir, { recursive: true });
+const Plugin = require('./plugin.js');
+
+class MkdirPlugin extends Plugin {
+  process_options(options) {
+    // 自动创建目录
+    let output_dir = path.dirname(options.output);
+
+    if (output_dir && !fs.existsSync(output_dir)) {
+      fs.mkdirSync(output_dir, { recursive: true });
+    }
+
+    return options;
   }
+}
 
-  return options;
-};
+module.exports = MkdirPlugin;

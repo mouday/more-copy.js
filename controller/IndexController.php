@@ -1,10 +1,10 @@
 <?php
 
-namespace {{parse.output.dir | replace("/", "\\")}};
+namespace controller;
 
 use app\BaseController;
 
-class {{parse.output.name}} extends BaseController
+class IndexController extends BaseController
 {
     /**
      * 首页
