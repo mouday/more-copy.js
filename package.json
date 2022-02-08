@@ -5,11 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "commander": "^9.0.0",
+    "glob": "^7.2.0",
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {},
   "scripts": {
-    "copy-help": "more-copy -h"
+    "copy-help": "mcp -h"
   },
   "bin": {
     "mcp": "bin/index.js"

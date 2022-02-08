@@ -1,0 +1,5 @@
+test/
+webpack.*.js
+doc
+public
+node_modules

@@ -62,3 +62,5 @@ module.exports = function (options) {
   return options;
 };
 ```
+
+plugin 需要更换为 class，支持传参

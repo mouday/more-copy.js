@@ -1,0 +1,2 @@
+component.js
+{{now.fullYear}}

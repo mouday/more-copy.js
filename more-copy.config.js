@@ -1,6 +1,4 @@
-const mkdirPlugin = require('./plugins/mkdir-plugin.js');
-const nowPlugin = require('./plugins/now-plugin.js');
-const parsePlugin = require('./plugins/parse-plugin.js');
+const { mkdirPlugin, nowPlugin, parsePlugin } = require('more-copy');
 
 module.exports = {
   debug: true,
