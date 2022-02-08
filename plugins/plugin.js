@@ -1,3 +1,6 @@
+/**
+ * 插件基类
+ */
 class Plugin {
   constructor(params = {}) {
     this.params = params;

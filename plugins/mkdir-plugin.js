@@ -3,9 +3,11 @@ const path = require('path');
 
 const Plugin = require('./plugin.js');
 
+/**
+ * 自动创建目录
+ */
 class MkdirPlugin extends Plugin {
   process_options(options) {
-    // 自动创建目录
     let output_dir = path.dirname(options.output);
 
     if (output_dir && !fs.existsSync(output_dir)) {

@@ -1,2 +1,2 @@
 component.js
-{{now.fullYear}}
+{{time.fullYear}}
