@@ -1,5 +1,6 @@
 /**
  * 参数解析
+ * ref: commander https://mp.weixin.qq.com/s/rUjnie4UtywCAyPodgDi6g
  */
 
 const { Command } = require('commander');
@@ -17,7 +18,7 @@ function getCommandOptions() {
   program.usage('source target [options]');
 
   program.option('-c, --config <config filename>', 'config filename');
-  // program.option('-o, --output <filename>', 'output filename');
+  program.option('-p, --params <params>', 'extra params');
   // console.log(process.argv.slice(2, -1));
   // console.log(process.argv[process.argv.length - 1]);
   program.parse(process.argv);
@@ -27,11 +28,11 @@ function getCommandOptions() {
   options.input = process.argv[2];
   options.output = process.argv[3];
 
-  // if (process.argv.length < 4) {
-  //   throw new Error('params not enough');
-  // }
+  // 额外参数
+  try {
+    options.params = JSON.parse(options.params);
+  } catch (e) {}
 
-  // console.log(options);
   return options;
 }
 

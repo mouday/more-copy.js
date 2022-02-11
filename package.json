@@ -1,18 +1,17 @@
 {
   "name": "more-copy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "copy template generate code file",
   "main": "index.js",
   "dependencies": {
     "commander": "^9.0.0",
     "glob": "^7.2.0",
+    "naming-style": "^1.0.1",
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {},
   "scripts": {
-    "copy-help": "mcp -h",
-    "echo": "echo",
-    "mcp:component": "mcp template/component/component.* "
+    "copy-help": "mcp -h"
   },
   "bin": {
     "mcp": "bin/index.js"
