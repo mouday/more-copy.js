@@ -17,19 +17,31 @@ class TablePlugin extends Plugin {
       // 配置
       let config = TablePlugin.default_config;
 
-      if (this.params.config) {
-        config = { ...config, ...this.params.config };
+      if (this.params) {
+        config = { ...config, ...this.params };
       }
 
       // 入参
       let data = { database: config.database, table: table_name };
 
-      const results = await async_query(config, TablePlugin.query_sql, data);
+      // 查表
+      const table_results = await async_query(
+        config,
+        TablePlugin.query_table_sql,
+        data,
+      );
 
-      let columns = results.map((item) => {
+      // 查列
+      const columns_results = await async_query(
+        config,
+        TablePlugin.query_columns_sql,
+        data,
+      );
+
+      let columns = columns_results.map((item) => {
         return {
           name: item.COLUMN_NAME,
-          type: item.DATA_TYPE,
+          type: TablePlugin.data_type_mapping[item.DATA_TYPE] || item.DATA_TYPE,
           comment: item.COLUMN_COMMENT,
         };
       });
@@ -37,6 +49,7 @@ class TablePlugin extends Plugin {
       options.table = {
         database: data.database,
         table: data.table,
+        table_comment: table_results[0].TABLE_COMMENT,
         columns,
       };
     }
@@ -45,6 +58,7 @@ class TablePlugin extends Plugin {
   }
 }
 
+// 数据库默认配置
 TablePlugin.default_config = {
   host: 'localhost',
   user: 'root',
@@ -52,7 +66,17 @@ TablePlugin.default_config = {
   database: 'data',
 };
 
-TablePlugin.query_sql =
+// 查列
+TablePlugin.query_columns_sql =
   'SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = :database and TABLE_NAME = :table';
+
+// 查表
+TablePlugin.query_table_sql =
+  'SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA = :database and TABLE_NAME = :table';
+
+// 数据库类型映射
+TablePlugin.data_type_mapping = {
+  varchar: 'string',
+};
 
 module.exports = TablePlugin;
