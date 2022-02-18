@@ -110,6 +110,9 @@ MySQLPlugin({
 TablePlugin({
   config
 });
+
+// 9、改变输出文件夹的命名风格，支持naming-style的所有风格参数
+OutputDirnameNamingPlugin({style})
 ```
 
 ## 自定义插件

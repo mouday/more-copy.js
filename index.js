@@ -12,6 +12,7 @@ const ThinkphpPlugin = require('./plugins/thinkphp-plugin.js');
 const VuePlugin = require('./plugins/vue-plugin.js');
 const MySQLPlugin = require('./plugins/mysql-plugin.js');
 const TablePlugin = require('./plugins/table-plugin.js');
+const OutputDirnameNamingPlugin = require('./plugins/output-dirname-naming-plugin.js');
 
 async function renderToFile(options) {
   // 获取用户配置
@@ -49,6 +50,7 @@ module.exports = {
   TimePlugin,
   ParsePlugin,
   OutputNamingPlugin,
+  OutputDirnameNamingPlugin,
   ThinkphpPlugin,
   VuePlugin,
   MySQLPlugin,
