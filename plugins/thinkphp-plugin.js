@@ -25,6 +25,13 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.model = `${pascal_name}Model`;
       thinkphp.controller = `${pascal_name}Controller`;
       thinkphp.pascal_name = pascal_name;
+      thinkphp.api = {
+        getList: `/${pascal_name}/get${pascal_name}List`,
+        getById: `/${pascal_name}/get${pascal_name}ById`,
+        deleteById: `/${pascal_name}/delete${pascal_name}ById`,
+        updateById: `/${pascal_name}/update${pascal_name}ById`,
+        add: `/${pascal_name}/add${pascal_name}`,
+      }
     }
 
     thinkphp.namespace = path.dirname(options.output).replace(/\//g, '\\');
