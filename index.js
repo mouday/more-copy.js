@@ -9,21 +9,24 @@ const TimePlugin = require('./plugins/time-plugin.js');
 const ParsePlugin = require('./plugins/parse-plugin.js');
 const OutputNamingPlugin = require('./plugins/output-naming-plugin.js');
 const ThinkphpPlugin = require('./plugins/thinkphp-plugin.js');
+const VuePlugin = require('./plugins/vue-plugin.js');
+const MySQLPlugin = require('./plugins/mysql-plugin.js');
+const TablePlugin = require('./plugins/table-plugin.js');
 
-function renderToFile(options) {
+async function renderToFile(options) {
   // 获取用户配置
   let config = getCustomConfig(options.config);
 
   if (config.plugins) {
     for (let plugin of config.plugins) {
-      options = plugin.process_options(options);
+      options = await plugin.process_options(options);
     }
   }
 
   // 调试模式
   if (config.debug) {
     console.log(config);
-    console.log(options);
+    console.log(JSON.stringify(options, null, 2));
   }
 
   // 渲染
@@ -47,4 +50,7 @@ module.exports = {
   ParsePlugin,
   OutputNamingPlugin,
   ThinkphpPlugin,
+  VuePlugin,
+  MySQLPlugin,
+  TablePlugin,
 };

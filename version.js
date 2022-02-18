@@ -2,8 +2,13 @@
  * version
  */
 const fs = require('fs');
+const path = require('path');
 
-const packageJsonData = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const package_file = path.resolve(__dirname, 'package.json');
+
+// console.log(console.log('__dirname : ' + ));
+
+const packageJsonData = JSON.parse(fs.readFileSync(package_file, 'utf8'));
 
 const VERSION = packageJsonData.version;
 

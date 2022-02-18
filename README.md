@@ -94,6 +94,22 @@ ThinkphpPlugin({ prefix: '表前缀' });
 
 // 5、时间插件
 TimePlugin();
+
+// 6、Vue需要的参数
+// 支持额外参数 -p '{"name": "name"}'
+VuePlugin();
+
+// 7、从MySQL中查询数据
+// -p '{sql, data}'
+MySQLPlugin({
+  config
+});
+
+// 8、从MySQL中查询表数据数据
+// -p '{table}'
+TablePlugin({
+  config
+});
 ```
 
 ## 自定义插件
