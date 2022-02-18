@@ -43,6 +43,7 @@ class TablePlugin extends Plugin {
           name: item.COLUMN_NAME,
           type: TablePlugin.data_type_mapping[item.DATA_TYPE] || item.DATA_TYPE,
           comment: item.COLUMN_COMMENT,
+          default: item.COLUMN_DEFAULT,
         };
       });
 
