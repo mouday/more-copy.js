@@ -25,13 +25,23 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.model = `${pascal_name}Model`;
       thinkphp.controller = `${pascal_name}Controller`;
       thinkphp.pascal_name = pascal_name;
-      thinkphp.api = {
-        getList: `/${pascal_name}/get${pascal_name}List`,
-        getById: `/${pascal_name}/get${pascal_name}ById`,
-        deleteById: `/${pascal_name}/delete${pascal_name}ById`,
-        updateById: `/${pascal_name}/update${pascal_name}ById`,
-        add: `/${pascal_name}/add${pascal_name}`,
+
+      // 方法名
+      thinkphp.methods = {
+        getList: `get${pascal_name}List`,
+        getById: `get${pascal_name}ById`,
+        deleteById: `delete${pascal_name}ById`,
+        updateById: `update${pascal_name}ById`,
+        add: `add${pascal_name}`,
+      };
+
+      // 对外接口名
+      let api = {};
+      for (let [key, val] of Object.entries(thinkphp.methods)) {
+        api[key] = `/${pascal_name}/${val}`;
       }
+
+      thinkphp.api = api;
     }
 
     thinkphp.namespace = path.dirname(options.output).replace(/\//g, '\\');
