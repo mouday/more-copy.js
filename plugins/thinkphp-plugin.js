@@ -24,6 +24,7 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.service = `${pascal_name}Service`;
       thinkphp.model = `${pascal_name}Model`;
       thinkphp.controller = `${pascal_name}Controller`;
+      thinkphp.validate = `${pascal_name}Validate`;
       thinkphp.pascal_name = pascal_name;
 
       // 方法名

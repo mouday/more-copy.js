@@ -35,7 +35,9 @@ function async_query(config, sql, params) {
     });
 
     connection.end();
-  }).catch(() => {});
+  }).catch((e) => {
+    console.log(e);
+  });
 }
 
 module.exports = {

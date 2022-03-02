@@ -11,6 +11,8 @@ const { log } = require('console');
  */
 class TablePlugin extends Plugin {
   async process_options(options) {
+    // console.log(options);
+
     let table_name = options.params.table;
 
     if (table_name) {
@@ -21,9 +23,13 @@ class TablePlugin extends Plugin {
         config = { ...config, ...this.params };
       }
 
+      // console.log(config);
+
       // 入参
       let data = { database: config.database, table: table_name };
-
+      // console.log(data);
+      // console.log(TablePlugin.query_columns_sql);
+      // console.log(TablePlugin.query_table_sql,);
       // 查表
       const table_results = await async_query(
         config,
@@ -31,12 +37,17 @@ class TablePlugin extends Plugin {
         data,
       );
 
+      // console.log(table_results);
+      
+
       // 查列
       const columns_results = await async_query(
         config,
         TablePlugin.query_columns_sql,
         data,
       );
+
+      // console.log(columns_results);
 
       let columns = columns_results.map((item) => {
         return {
@@ -61,7 +72,7 @@ class TablePlugin extends Plugin {
 
 // 数据库默认配置
 TablePlugin.default_config = {
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'root',
   password: '123456',
   database: 'data',
