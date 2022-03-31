@@ -113,6 +113,9 @@ TablePlugin({
 
 // 9、改变输出文件夹的命名风格，支持naming-style的所有风格参数
 OutputDirnameNamingPlugin({style})
+
+// 10、输入参数name的命名风格装换
+NamingPlugin()
 ```
 
 ## 自定义插件

@@ -13,6 +13,7 @@ const VuePlugin = require('./plugins/vue-plugin.js');
 const MySQLPlugin = require('./plugins/mysql-plugin.js');
 const TablePlugin = require('./plugins/table-plugin.js');
 const OutputDirnameNamingPlugin = require('./plugins/output-dirname-naming-plugin.js');
+const NamingPlugin = require('./plugins/naming-plugin.js');
 
 async function renderToFile(options) {
   // 获取用户配置
@@ -55,4 +56,5 @@ module.exports = {
   VuePlugin,
   MySQLPlugin,
   TablePlugin,
+  NamingPlugin
 };

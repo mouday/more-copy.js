@@ -1,5 +1,5 @@
 const path = require('path');
-const { pascal } = require('naming-style');
+const { pascal, hyphen } = require('naming-style');
 const Plugin = require('./plugin.js');
 
 /**
@@ -14,6 +14,7 @@ class ThinkphpPlugin extends Plugin {
 
     if (name) {
       let pascal_name = pascal(name);
+      let hyphen_name = hyphen(name);
 
       if (this.params.prefix) {
         thinkphp.table = `${this.params.prefix}${name}`;
@@ -26,6 +27,7 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.controller = `${pascal_name}Controller`;
       thinkphp.validate = `${pascal_name}Validate`;
       thinkphp.pascal_name = pascal_name;
+      thinkphp.hyphen_name = hyphen_name;
 
       // 方法名
       thinkphp.methods = {
