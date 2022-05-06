@@ -27,7 +27,7 @@ $ mcp template.js demo.js
 
 ```
 -c 指定配置文件路径 默认为 ./more-copy.config.js
--p 传入参数，接收json格式的字符串
+-p 传入参数，接收json格式的字符串，如：'{"name":"more-copy"}'
 ```
 
 2、用户代码
@@ -61,6 +61,10 @@ const CustomPlugin = require('./custom-plugin.js');
 module.exports = {
   // 开启调试
   debug: true,
+
+  // 模板目录
+  template: './template',
+
   // 使用插件，有先后顺序
   plugins: [new CustomPlugin()],
 };

@@ -19,6 +19,7 @@ async function renderToFile(options) {
   // 获取用户配置
   let config = getCustomConfig(options.config);
 
+  // 使用插件
   if (config.plugins) {
     for (let plugin of config.plugins) {
       options = await plugin.process_options(options);
@@ -32,7 +33,7 @@ async function renderToFile(options) {
   }
 
   // 渲染
-  let content = renderTemplate(options.input, options);
+  let content = renderTemplate(options.input, options, config.template);
 
   // 写入到文件
   writeToFile(options.output, content);
@@ -56,5 +57,5 @@ module.exports = {
   VuePlugin,
   MySQLPlugin,
   TablePlugin,
-  NamingPlugin
+  NamingPlugin,
 };

@@ -4,7 +4,9 @@ const Plugin = require('./plugin.js');
 
 /**
  * ThinkPHP需要用得的参数
- * prefix 表前缀
+ * constructor prefix 表前缀
+ * 
+ * process_options name 名称
  */
 class ThinkphpPlugin extends Plugin {
   process_options(options) {
@@ -12,10 +14,12 @@ class ThinkphpPlugin extends Plugin {
 
     let thinkphp = {};
 
+    // 传递了必要的参数
     if (name) {
       let pascal_name = pascal(name);
       let hyphen_name = hyphen(name);
-
+      
+      // 表前缀
       if (this.params.prefix) {
         thinkphp.table = `${this.params.prefix}${name}`;
       } else {
@@ -47,8 +51,10 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.api = api;
     }
 
+    // 命名空间
     thinkphp.namespace = path.dirname(options.output).replace(/\//g, '\\');
 
+    // 挂载到options上
     options.thinkphp = thinkphp;
 
     return options;

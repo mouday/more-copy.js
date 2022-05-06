@@ -3,8 +3,9 @@
  */
 const nunjucks = require('nunjucks');
 
-function renderTemplate(template, data) {
-  return nunjucks.render(template, data);
+function renderTemplate(name, data, template='') {
+  var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(template));
+  return env.render(name, data);
 }
 
 module.exports = {
