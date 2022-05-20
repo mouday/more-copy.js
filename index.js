@@ -1,3 +1,5 @@
+const path = require("path");
+
 const { getCommandOptions } = require('./utils/command-options.js');
 const { renderTemplate } = require('./utils/render.js');
 const { getCustomConfig } = require('./utils/custom-config.js');
@@ -15,9 +17,13 @@ const TablePlugin = require('./plugins/table-plugin.js');
 const OutputDirnameNamingPlugin = require('./plugins/output-dirname-naming-plugin.js');
 const NamingPlugin = require('./plugins/naming-plugin.js');
 
+// 读取自定义配置
+const default_config_filename = "./more-copy.config.js";
+// const default_config_path = path.join(process.cwd(), config_filename);
+
 async function renderToFile(options) {
   // 获取用户配置
-  let config = getCustomConfig(options.config);
+  let config = getCustomConfig(options.config || default_config_filename);
 
   // 使用插件
   if (config.plugins) {

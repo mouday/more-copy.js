@@ -1,17 +1,6 @@
-const path = require('path');
 
-// 读取自定义配置
-const config_filename = 'more-copy.config.js';
-const default_config_path = path.join(process.cwd(), config_filename);
-
-function getCustomConfig(config_path = default_config_path) {
-  let config = {};
-
-  try {
-    config = require(config_path);
-  } catch (e) {
-    // do nothing
-  }
+function getCustomConfig(config_path) {
+  let config = require(path.join(process.cwd(), config_path));
   return config;
 }
 
