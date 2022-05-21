@@ -1,4 +1,3 @@
-const path = require("path");
 
 const { getCommandOptions } = require('./utils/command-options.js');
 const { renderTemplate } = require('./utils/render.js');
