@@ -7,7 +7,6 @@
 可以使用插件的文件拷贝工具
 
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
-
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
 - npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
 
