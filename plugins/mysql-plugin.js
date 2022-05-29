@@ -1,7 +1,7 @@
 const path = require('path');
 const { snake } = require('naming-style');
 const Plugin = require('./plugin.js');
-const { async_query } = require('../utils/mysql-util.js');
+const { async_query } = require('../src/utils/mysql-util.js');
 const { log } = require('console');
 
 /**

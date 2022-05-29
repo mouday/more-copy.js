@@ -1,9 +1,17 @@
 # more-copy.js
 
+![](img/more-copy.png)
+
 指定文件模板生成到指定的文件目录下
 
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
 - npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
+
+处理步骤：
+
+- 读取文件
+- 处理文件
+- 输出文件
 
 ## 安装
 
@@ -17,23 +25,28 @@ npm i more-copy -g
 1、命令行
 
 ```bash
-$ mcp [模板路径] [输出路径] [-p json字符串] [-c 配置文件路径]
+$ mcp -h
+Usage: mcp [options]
 
-eg:
-$ mcp template.js demo.js
+Options:
+  -V, --version                            output the version number
+  -i, --input <input filename>             input filename
+  -o, --output <output filename>           output filename
+  -d, --data <json data or data filename>  extra data (default: "{}")
+  -c, --config <config filename>           config filename (default: "./more-copy.config.js")
+  -f, --force                              overwrite output file
+  -h, --help                               display help for command
 ```
 
-参数
-
-```
--c 指定配置文件路径 默认为 ./more-copy.config.js
--p 传入参数，接收json格式的字符串，如：'{"name":"more-copy"}'
+示例
+```bash
+$ mcp 
 ```
 
 2、用户代码
 
 ```js
-const { renderToFile } = require('more-copy');
+const { renderToFile } = require("more-copy");
 
 renderToFile({ input, output });
 ```
@@ -53,17 +66,17 @@ https://nunjucks.bootcss.com/templating.html
 
 ```js
 // 插件示例
-const { MkdirPlugin, ParsePlugin, TimePlugin } = require('more-copy');
+const { MkdirPlugin, ParsePlugin, TimePlugin } = require("more-copy");
 
 // 使用自定义插件
-const CustomPlugin = require('./custom-plugin.js');
+const CustomPlugin = require("./custom-plugin.js");
 
 module.exports = {
   // 开启调试
   debug: true,
 
   // 模板目录
-  template: './template',
+  template: "./template",
 
   // 使用插件，有先后顺序
   plugins: [new CustomPlugin()],
@@ -94,7 +107,7 @@ ParsePlugin();
 
 // 4、ThinkPHP需要用得的参数
 // 支持额外参数 -p '{"name": "table_name"}'
-ThinkphpPlugin({ prefix: '表前缀' });
+ThinkphpPlugin({ prefix: "表前缀" });
 
 // 5、时间插件
 TimePlugin();
@@ -106,20 +119,20 @@ VuePlugin();
 // 7、从MySQL中查询数据
 // -p '{sql, data}'
 MySQLPlugin({
-  config
+  config,
 });
 
 // 8、从MySQL中查询表数据数据
 // -p '{table}'
 TablePlugin({
-  config
+  config,
 });
 
 // 9、改变输出文件夹的命名风格，支持naming-style的所有风格参数
-OutputDirnameNamingPlugin({style})
+OutputDirnameNamingPlugin({ style });
 
 // 10、输入参数name的命名风格装换
-NamingPlugin()
+NamingPlugin();
 ```
 
 ## 自定义插件
@@ -127,12 +140,12 @@ NamingPlugin()
 custom-plugin.js 用来处理模板入参
 
 ```js
-const Plugin = require('more-copy');
+const Plugin = require("more-copy");
 
 class CustomPlugin extends Plugin {
   process_options(options) {
     options.custom = {
-      name: 'Tom',
+      name: "Tom",
     };
 
     return options;
@@ -141,3 +154,12 @@ class CustomPlugin extends Plugin {
 
 module.exports = CustomPlugin;
 ```
+
+## Plugin
+
+|plugin | 描述
+|-|-|
+ [ConsolePlugin][plugins/json-table-plugin/README.md] | 支持json文件的表格模板
+
+
+生成Vue编辑页面代码的示例 [test/mysql-demo/README.md](test/mysql-demo/README.md)

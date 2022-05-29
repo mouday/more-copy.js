@@ -4,9 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const package_file = path.resolve(__dirname, 'package.json');
-
-// console.log(console.log('__dirname : ' + ));
+const package_file = path.resolve(__dirname, '../package.json');
 
 const packageJsonData = JSON.parse(fs.readFileSync(package_file, 'utf8'));
 

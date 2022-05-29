@@ -1,5 +1,5 @@
 # 申明伪目标
-.PHONY: component controller
+.PHONY: component controller edit
 
 # 定义变量
 name = ''
@@ -13,3 +13,7 @@ wx-component:
 # 目标 make controller name=Index
 controller:
 	mcp template/controller.php controller/$(name)Controller.php
+
+# make edit name=
+edit:
+	mcp DataForm.vue $(name).vue -p '{"name": "$(name)", "table": "$(name).json"}'
