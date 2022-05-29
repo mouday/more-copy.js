@@ -86,6 +86,8 @@ $ mcp
 | [NunjucksPlugin](plugins/nunjucks-plugin/README.md) | 模板渲染         |
 | [ParsePlugin](plugins/parse-plugin/README.md) | 解析路径参数         |
 | [TimePlugin](plugins/time-plugin/README.md) | 基于 dayjs 的时间插件      |
+| [TablePlugin](plugins/table-plugin/README.md) | 获取MySQL表字段     |
+| [ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | ThinkPHP CURD 需要用的参数    |
 
 ## 自定义插件
 

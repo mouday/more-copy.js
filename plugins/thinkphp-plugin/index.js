@@ -3,7 +3,7 @@ const { pascal, hyphen } = require("naming-style");
 const Plugin = require("../plugin.js");
 
 /**
- * ThinkPHP需要用得的参数
+ * ThinkPHP CURD 需要用的参数
  * constructor prefix 表前缀
  *
  * options
