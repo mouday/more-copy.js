@@ -29,5 +29,8 @@
   "homepage": "https://github.com/mouday/more-copy.js",
   "bugs": {
     "url": "https://github.com/mouday/more-copy.js/issues"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }

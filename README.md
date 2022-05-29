@@ -1,6 +1,12 @@
 # more-copy.js
 
+![npm](https://img.shields.io/npm/v/more-copy)
+![npm](https://img.shields.io/npm/dw/more-copy)
+![node-current](https://img.shields.io/node/v/more-copy)
+
 可以使用插件的文件拷贝工具
+
+- Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
 
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
 - npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
@@ -46,8 +52,6 @@ $ mcp --input input.txt --output output.txt
 
 2、使用配置文件
 
-# 配置
-
 当前目录下可以配置
 
 ```js
@@ -89,7 +93,7 @@ $ mcp
 
 插件约定添加 data 对象上的属性，以插件名命名，特殊除外。
 
-例如：使用 `ParsePlugin` 将会添加属性`options.parse`
+例如：使用 `ParsePlugin` 将会添加属性`data.parse`
 
 custom-plugin.js 用来处理模板入参
 
