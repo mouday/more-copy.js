@@ -3,7 +3,7 @@ const dayjs = require("dayjs");
 
 const default_datetime_format = "YYYY-MM-DD HH:mm:ss";
 const default_date_format = "YYYY-MM-DD";
-const default_time_format = " HH:mm:ss";
+const default_time_format = "HH:mm:ss";
 
 /**
  * 时间插件

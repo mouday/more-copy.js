@@ -4,7 +4,7 @@ const path = require("path");
 const Plugin = require("../plugin.js");
 
 /**
- * 自动创建目录
+ * 自动创建输出目录
  */
 class MkdirPlugin extends Plugin {
   process({ output, content }) {

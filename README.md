@@ -1,13 +1,13 @@
 # more-copy.js
 
-![](img/more-copy.png)
-
-指定文件模板生成到指定的文件目录下
+可以使用插件的文件拷贝工具
 
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
 - npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
 
-处理步骤：
+![](img/more-copy.png)
+
+简单的处理步骤：
 
 - 读取文件
 - 处理文件
@@ -39,127 +39,86 @@ Options:
 ```
 
 示例
+
 ```bash
-$ mcp 
+$ mcp --input input.txt --output output.txt
 ```
 
-2、用户代码
+2、使用配置文件
+
+# 配置
+
+当前目录下可以配置
 
 ```js
-const { renderToFile } = require("more-copy");
-
-renderToFile({ input, output });
-```
-
-## 模板
-
-模板渲染基于 Nunjuck.js，言下之意，支持 Nunjuck.js 的所有模板语法
-https://nunjucks.bootcss.com/templating.html
-
-## 命令行
-
-通常情况下，一个项目的文件生成路径是固定的，可以结合 package.json 或者 make 简化命令行
-
-## 配置
-
-当前目录下可以配置 more-copy.config.js
-
-```js
-// 插件示例
-const { MkdirPlugin, ParsePlugin, TimePlugin } = require("more-copy");
-
-// 使用自定义插件
-const CustomPlugin = require("./custom-plugin.js");
-
+// more-copy.config.js
 module.exports = {
-  // 开启调试
-  debug: true,
+  // 输入文件路径, 必填
+  input: "./input.txt",
 
-  // 模板目录
-  template: "./template",
+  // 输出文件路径, 必填
+  output: "./output.txt",
 
-  // 使用插件，有先后顺序
-  plugins: [new CustomPlugin()],
+  // 数据
+  data: {},
+
+  // 使用插件，有先后顺序, 从下至下依次执行，类似漏斗
+  plugins: [],
 };
 ```
 
-## 已实现插件
+有了配置文件就可以简化命令行输入
 
-用户可以使用插件来给 options 添加参数
-
-插件约定添加 options 对象上的属性，以插件名命名，特殊除外。
-
-例如：使用 `ParsePlugin` 将会添加属性`options.parse`
-
-```js
-// 插件基类，自定义插件推荐继承该基类，并实现其方法
-Plugin(options);
-
-// 1、递归创建目标文件夹
-MkdirPlugin();
-
-// 2、改变输出文件名的命名风格，支持naming-style的所有风格参数
-// eg: {style: 'pascal'}
-OutputNamingPlugin({ style });
-
-// 3、解析路径参数
-ParsePlugin();
-
-// 4、ThinkPHP需要用得的参数
-// 支持额外参数 -p '{"name": "table_name"}'
-ThinkphpPlugin({ prefix: "表前缀" });
-
-// 5、时间插件
-TimePlugin();
-
-// 6、Vue需要的参数
-// 支持额外参数 -p '{"name": "name"}'
-VuePlugin();
-
-// 7、从MySQL中查询数据
-// -p '{sql, data}'
-MySQLPlugin({
-  config,
-});
-
-// 8、从MySQL中查询表数据数据
-// -p '{table}'
-TablePlugin({
-  config,
-});
-
-// 9、改变输出文件夹的命名风格，支持naming-style的所有风格参数
-OutputDirnameNamingPlugin({ style });
-
-// 10、输入参数name的命名风格装换
-NamingPlugin();
+```bash
+$ mcp
 ```
 
+## Plugin 插件
+
+| plugin                                              | 描述             |
+| --------------------------------------------------- | ---------------- |
+| [ConsolePlugin](plugins/console-plugin/README.md)   | 用于日志输出     |
+| [MkdirPlugin](plugins/mkdir-plugin/README.md)       | 自动创建输出目录 |
+| [NunjucksPlugin](plugins/nunjucks-plugin/README.md) | 模板渲染         |
+| [ParsePlugin](plugins/parse-plugin/README.md) | 解析路径参数         |
+| [TimePlugin](plugins/time-plugin/README.md) | 基于 dayjs 的时间插件      |
+
 ## 自定义插件
+
+用户可以使用插件来处理输出
+
+插件约定添加 data 对象上的属性，以插件名命名，特殊除外。
+
+例如：使用 `ParsePlugin` 将会添加属性`options.parse`
 
 custom-plugin.js 用来处理模板入参
 
 ```js
-const Plugin = require("more-copy");
+const Plugin = require("more-copy/plugins/plugin.js");
 
 class CustomPlugin extends Plugin {
-  process_options(options) {
-    options.custom = {
+  /**
+   * 插件处理文件内容
+   * @param {*} input 输入文件的路径
+   * @param {*} output 输出文件的路径
+   * @param {*} data  输出的数据，可用于挂载自定义数据
+   * @param {*} plugins 使用的插件列表
+   * @param {*} content 文件内容
+   * @returns content 返回文件内容
+   */
+  process({ input, output, data, plugins, content }) {
+    // 挂载自定义数据
+    data.custom = {
       name: "Tom",
     };
 
-    return options;
+    return content;
   }
 }
 
 module.exports = CustomPlugin;
 ```
 
-## Plugin 插件
+## 更多示例
 
-|plugin | 描述
-|-|-|
- [ConsolePlugin](plugins/console-plugin/README.md) | 支持json文件的表格模板
-
-
-生成Vue编辑页面代码的示例 [test/mysql-demo/README.md](test/mysql-demo/README.md)
+生成 Vue 编辑页面代码的示例 [test/mysql-demo/README.md](test/mysql-demo/README.md)

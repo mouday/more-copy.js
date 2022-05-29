@@ -1,5 +1,7 @@
 # ConsolePlugin
 
+用于日志输出
+
 使用示例
 
 ```js
