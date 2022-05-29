@@ -159,7 +159,7 @@ module.exports = CustomPlugin;
 
 |plugin | 描述
 |-|-|
- [ConsolePlugin][plugins/json-table-plugin/README.md] | 支持json文件的表格模板
+ [ConsolePlugin](plugins/json-table-plugin/README.md) | 支持json文件的表格模板
 
 
 生成Vue编辑页面代码的示例 [test/mysql-demo/README.md](test/mysql-demo/README.md)
