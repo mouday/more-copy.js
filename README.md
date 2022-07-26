@@ -6,6 +6,8 @@
 
 可以使用插件的文件处理工具，类似VSCode中的代码片段，不过他依赖Node.js而不依赖任何编辑器
 
+![](img/more-copy-3.png)
+
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
 - npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
