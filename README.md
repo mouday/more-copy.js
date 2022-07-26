@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/dw/more-copy)
 ![node-current](https://img.shields.io/node/v/more-copy)
 
-可以使用插件的文件处理工具，类似VSCode中的代码片段，不过他依赖Node.js而不依赖任何编辑器
+可以使用插件的数据处理工具
 
 ![](img/more-copy-3.png)
 
@@ -38,6 +38,8 @@ Options:
 ```
 
 ## 示例
+
+实现一个类似VSCode中的代码片段，不过他依赖Node.js而不依赖任何编辑器
 
 当前目录配置文件
 
