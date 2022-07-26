@@ -24,9 +24,7 @@
 npm i more-copy -g
 ```
 
-## 使用
-
-1、命令行
+## 命令行
 
 ```bash
 $ mcp -h
@@ -37,27 +35,102 @@ Options:
   -h, --help                               display help for command
 ```
 
-示例
+## 示例
 
-配置文件
-
-当前目录下可以配置
+当前目录配置文件
 
 ```js
 // more-copy.config.js
+const NunjucksPlugin = require("more-copy/plugins/nunjucks-plugin/index.js");
+const ReadFilePlugin = require("more-copy/plugins/read-file-plugin/index.js");
+const ConsolePlugin = require("more-copy/plugins/console-plugin/index.js");
+const TimePlugin = require("more-copy/plugins/time-plugin/index.js");
+const WriteFilePlugin = require("more-copy/plugins/write-file-plugin/index.js");
+
+const path = require('path');
+
+let params = process.argv.slice(2);
+console.log(params);
+
+let [name, input, output] = params
+
+// 模板目录
+const template = 'template';
+
+// 输出目录
+const output_dir = `dist/${name}`
+
+function pathResolve(filename){
+  return path.join(template, filename);
+}
+
 module.exports = {
+
   // 数据
   data: {},
 
-  // 使用插件，有先后顺序, 从下至下依次执行，类似漏斗
-  plugins: [],
+  // 使用插件，有先后顺序
+  plugins: [
+    new TimePlugin(),
+    new ConsolePlugin(),
+    new ReadFilePlugin({
+      filename: pathResolve(input)
+    }),
+    new NunjucksPlugin(),
+    new WriteFilePlugin({
+      filename: path.join(output_dir, output),
+      mkdir: true
+    }),
+  ],
 };
+
 ```
 
-有了配置文件就可以简化命令行输入
+模板文件 template/list.vue
+```html
+<template>
+  <div class=""></div>
+</template>
+
+<script>
+/**
+ * created {{time.date}}
+ */
+export default {
+  name: "",
+
+  components: {},
+
+  props: {
+  },
+
+  computed: {},
+
+  data() {
+    return {};
+  },
+
+  methods: {
+
+  },
+
+  created() {},
+};
+</script>
+
+<style lang="less">
+
+</style>
+
+<style lang="less" scoped>
+
+</style>
+```
+
+生成文件
 
 ```bash
-$ mcp
+$ mcp user-list list.vue index.vue
 ```
 
 ## Plugin 插件
