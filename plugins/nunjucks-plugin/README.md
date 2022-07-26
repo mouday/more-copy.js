@@ -10,10 +10,6 @@
 const NunjucksPlugin = require("more-copy/plugins/nunjucks-plugin/index.js");
 
 module.exports = {
-  input: "input",
-
-  output: "output",
-
   // 数据
   data: {},
 

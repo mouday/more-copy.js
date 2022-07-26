@@ -5,13 +5,11 @@ const Plugin = require("../plugin.js");
  * 解析路径参数
  */
 class ParsePlugin extends Plugin {
-  process({ input, output, data, content }) {
+  process(data) {
     data.parse = {
-      input: path.parse(input),
-      output: path.parse(output),
+      input: path.parse(data.input),
+      output: path.parse(data.output),
     };
-
-    return content;
   }
 }
 

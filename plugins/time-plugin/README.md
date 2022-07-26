@@ -10,10 +10,6 @@
 const TimePlugin = require("more-copy/plugins/time-plugin/index.js");
 
 module.exports = {
-  input: "input",
-
-  output: "output",
-
   // 数据
   data: {},
 

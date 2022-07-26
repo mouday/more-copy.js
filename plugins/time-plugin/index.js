@@ -13,7 +13,7 @@ const default_time_format = "HH:mm:ss";
  *  datetime_format: 日期时间格式
  */
 class TimePlugin extends Plugin {
-  process({ data, content }) {
+  process(data) {
     let now = dayjs();
 
     data.time = {
@@ -28,8 +28,6 @@ class TimePlugin extends Plugin {
         this.options.datetime_format || default_datetime_format
       ),
     };
-
-    return content;
   }
 }
 

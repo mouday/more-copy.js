@@ -1,6 +1,6 @@
 {
   "name": "more-copy",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "copy template generate code file",
   "main": "./src/index.js",
   "dependencies": {
@@ -10,7 +10,9 @@
     "naming-style": "^1.0.1",
     "nunjucks": "^3.2.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
   "scripts": {
     "copy-help": "mcp -h"
   },
@@ -18,7 +20,7 @@
     "mcp": "src/cli.js"
   },
   "keywords": [
-    "copy, generate,template,code,file"
+    "copy,generate,template,code,file,vue"
   ],
   "author": "Peng Shiyu",
   "license": "ISC",
