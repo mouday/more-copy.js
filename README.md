@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/dw/more-copy)
 ![node-current](https://img.shields.io/node/v/more-copy)
 
-可以使用插件的文件拷贝工具
+可以使用插件的文件处理工具，类似VSCode中的代码片段，不过他依赖Node.js而不依赖任何编辑器
 
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
@@ -133,6 +133,49 @@ export default {
 $ mcp user-list list.vue index.vue
 ```
 
+生成文件 dist/index.vue
+```html
+<template>
+  <div class=""></div>
+</template>
+
+<script>
+/**
+ * created 2022-07-01
+ */
+export default {
+  name: "",
+
+  components: {},
+
+  props: {
+  },
+
+  computed: {},
+
+  data() {
+    return {};
+  },
+
+  methods: {
+
+  },
+
+  created() {},
+};
+</script>
+
+<style lang="less">
+
+</style>
+
+<style lang="less" scoped>
+
+</style>
+```
+
+我们看到，模板中的参数已经被替换为插件 TimePlugin 所提供的参数了
+
 ## Plugin 插件
 
 <!-- | [MkdirPlugin](plugins/mkdir-plugin/README.md)       | 自动创建输出目录 |
@@ -142,6 +185,13 @@ $ mcp user-list list.vue index.vue
 | [TablePlugin](plugins/table-plugin/README.md) | 获取MySQL表字段     |
 | [ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | ThinkPHP CURD 需要用的参数    |
 |  -->
+
+插件三要素：
+- 参数：由`new Plugin(options)`传入，可以理解为插件的`配置`
+- 挂载：可以再全局的data对象上绑定数据，用于传递数据给后面的插件使用，可以理解为插件的`输出`
+- 依赖：由data对象提供，由前面的Plugin提供，可以理解为插件的`输入`
+
+已实现的插件
 
 - [ConsolePlugin](plugins/console-plugin/README.md) 用于输出当前data的值
 
