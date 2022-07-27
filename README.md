@@ -210,6 +210,7 @@ export default {
   - 参数 
     - options.filename 输出文件名  
     - options.mkdir 是否创建文件夹 默认true
+    - overwrite 是否覆盖已存在文件 默认false
   - 依赖
     - data.content 输出的内容
 
