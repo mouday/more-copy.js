@@ -7,12 +7,14 @@ const Plugin = require("../plugin.js");
  * constructor prefix 表前缀
  *
  * options
- *  prefix 前缀
+ *  prefix 表前缀
  *  name 名称
+ *  output 输出路径
  */
 class ThinkphpPlugin extends Plugin {
-  process({ input, output, data, plugins, content }) {
+  process(data) {
     let name = this.options.name;
+    let output = this.options.output;
 
     let thinkphp = {};
 
@@ -36,7 +38,7 @@ class ThinkphpPlugin extends Plugin {
       thinkphp.hyphen_name = hyphen_name;
       
       // 命名空间
-      thinkphp.namespace = path.dirname(output).replace(/\//g, "\\");
+      thinkphp.namespace = output.replace(/\//g, "\\");
 
       // 方法名
       thinkphp.methods = {
@@ -58,8 +60,6 @@ class ThinkphpPlugin extends Plugin {
 
     // 挂载到data上
     data.thinkphp = thinkphp;
-
-    return content;
   }
 }
 
