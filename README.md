@@ -6,6 +6,8 @@
 
 基于Node.js的数据处理的工具
 
+利用more-copy，可以很容易实现一个类似VSCode、Pycharm、PHPStrom、Idea...中的代码片段，不过它依赖Node.js，而不依赖任何编辑器
+
 ![](img/more-copy-3.png)
 
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
@@ -39,10 +41,6 @@ Options:
 
 ## 示例
 
-实现一个类似VSCode中的代码片段，不过他依赖Node.js而不依赖任何编辑器
-
-当前目录配置文件
-
 一个简单的示例
 
 ```js
@@ -56,13 +54,17 @@ module.exports = {
     name: "Tom",
   },
 
-  // 使用插件，有先后顺序
-  plugins: [new TimePlugin(), new ConsolePlugin()],
+  // 使用插件，从上往下执行
+  // 后面的插件，可以依赖前面插件的输出
+  plugins: [
+    new TimePlugin(), 
+    new ConsolePlugin()
+  ],
 };
 
 ```
 
-执行命令，运行`more-copy`
+执行命令，运行 `more-copy`
 
 ```bash
 $ mcp
@@ -98,14 +100,12 @@ ConsolePlugin: {
 |- | - |  - | - | - |
 [ConsolePlugin](plugins/console-plugin/README.md) | - | - | - | 用于输出当前data的值
 [ReadFilePlugin](plugins/read-file-plugin/README.md) | filename：输入文件名 | - | content：文件内容 | 读取文件内容
-[WriteFilePlugin](plugins/write-file-plugin/index.js)| - | content 输出的内容 | filename 输出文件名<br />mkdir 是否创建文件夹 默认true<br />overwrite 是否覆盖已存在文件 默认false | 输出文件
+[WriteFilePlugin](plugins/write-file-plugin/index.js)| filename：输出文件名<br />mkdir：创建文件夹 默认true<br />overwrite：是否覆盖已存在文件 默认false | content：输出的内容 | - | 输出文件
 [TimePlugin](plugins/time-plugin/README.md)| - | - | time 时间对象 | 基于 dayjs 的时间插件 
-[NunjucksPlugin](plugins/nunjucks-plugin/README.md) |-  | content 和 data| - | 模板渲染
+[NunjucksPlugin](plugins/nunjucks-plugin/README.md) |-  | content：渲染前<br />data本身 | content：渲染后 | 模板渲染
 [LaravelPlugin](plugins/laravel-plugin/README.md) | - | name | laravel | laravel使用
 [ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | - | name | laravel | Thinkphp各种类名
 [TablePlugin](plugins/table-plugin/README.md) | - | table:表名<br />type_mapping: 类型映射<br />config:数据库配置| table | 获取MySQL表字段
-
-
 
 ## 自定义插件
 
