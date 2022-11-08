@@ -10,10 +10,6 @@
 const TablePlugin = require("more-copy/plugins/table-plugin/index.js");
 
 module.exports = {
-  input: "input",
-
-  output: "output",
-
   // 数据
   data: {},
 
@@ -21,6 +17,10 @@ module.exports = {
   plugins: [
     new TablePlugin({
       table: "tb_user",
+      // 类型映射
+      type_mapping: {},
+
+      // 数据库配置
       config: {
         host: "127.0.0.1",
         user: "root",
