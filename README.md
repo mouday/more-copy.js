@@ -103,9 +103,9 @@ ConsolePlugin: {
 [WriteFilePlugin](plugins/write-file-plugin/index.js)| filename：输出文件名<br />mkdir：创建文件夹 默认true<br />overwrite：是否覆盖已存在文件 默认false | content：输出的内容 | - | 输出文件
 [TimePlugin](plugins/time-plugin/README.md)| - | - | time 时间对象 | 基于 dayjs 的时间插件 
 [NunjucksPlugin](plugins/nunjucks-plugin/README.md) |-  | content：渲染前<br />data本身 | content：渲染后 | 模板渲染
-[LaravelPlugin](plugins/laravel-plugin/README.md) | - | name | laravel | laravel使用
-[ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | - | name | laravel | Thinkphp各种类名
-[TablePlugin](plugins/table-plugin/README.md) | - | table:表名<br />type_mapping: 类型映射<br />config:数据库配置| table | 获取MySQL表字段
+[LaravelPlugin](plugins/laravel-plugin/README.md) | name | - | laravel | laravel使用
+[ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | name | - | laravel | Thinkphp各种类名
+[TablePlugin](plugins/table-plugin/README.md) | table:表名<br />type_mapping: 类型映射<br />config:数据库配置| table | -  | 获取MySQL表字段
 
 ## 自定义插件
 
