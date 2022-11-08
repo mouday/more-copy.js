@@ -10,9 +10,6 @@ ThinkPHP CURD 需要用的参数
 const ThinkphpPlugin = require("more-copy/plugins/thinkphp-plugin/index.js");
 
 module.exports = {
-  input: "input",
-
-  output: "output",
 
   // 数据
   data: {},
