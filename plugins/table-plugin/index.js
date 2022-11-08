@@ -14,6 +14,7 @@ class TablePlugin extends Plugin {
     // console.log(options);
 
     let host = this.options.host
+    let port = this.options.port
     let user = this.options.user
     let password = this.options.password
     let database = this.options.database
@@ -23,6 +24,7 @@ class TablePlugin extends Plugin {
       // 配置
       let config = {
         host,
+        port,
         user,
         password,
         database,
