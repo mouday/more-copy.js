@@ -135,10 +135,6 @@ class CustomPlugin extends Plugin {
 module.exports = CustomPlugin;
 ```
 
-<!-- ## 更多示例
-
-生成 Vue 编辑页面代码的示例 [test/mysql-demo/README.md](test/mysql-demo/README.md) -->
-
 ## 其他版本：
 
 - [more-copy.js V2.0](README-2.0.md)

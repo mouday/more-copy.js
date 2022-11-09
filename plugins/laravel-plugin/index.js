@@ -29,7 +29,7 @@ class LaravelPlugin extends Plugin {
       laravel.hyphen_name = hyphen_name
 
       // 方法名
-      let methods = {
+      let api = {
         getList: `get${pascal_name}List`,
         getById: `get${pascal_name}ById`,
         deleteById: `delete${pascal_name}ById`,
@@ -37,13 +37,13 @@ class LaravelPlugin extends Plugin {
         add: `add${pascal_name}`,
       }
 
-      // 对外接口名
-      let api = {}
-      for (let [key, val] of Object.entries(methods)) {
-        api[key] = `/${pascal_name}/${val}`
-      }
+      // // 对外接口名
+      // let api = {}
+      // for (let [key, val] of Object.entries(methods)) {
+      //   api[key] = `/${pascal_name}/${val}`
+      // }
 
-      laravel.methods = methods
+      // laravel.methods = methods
       laravel.api = api
     }
 
