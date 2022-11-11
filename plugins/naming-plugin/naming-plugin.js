@@ -28,14 +28,12 @@ class NamingPlugin extends Plugin {
         camel: camel(name),
         hyphen: hyphen(name),
         snake: snake(name),
-        underscore: underscore(name),
-        setence: setence(name),
+        underscore: underscore(name)
       }
     }
 
-    options.naming = naming
+    data.naming = naming
 
-    return content
   }
 }
 
