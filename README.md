@@ -106,6 +106,7 @@ ConsolePlugin: {
 [LaravelPlugin](plugins/laravel-plugin/README.md) | name | - | laravel | laravel使用
 [ThinkphpPlugin](plugins/thinkphp-plugin/README.md) | name | - | laravel | Thinkphp各种类名
 [TablePlugin](plugins/table-plugin/README.md) | table:表名<br />type_mapping: 类型映射<br />config:数据库配置| table | -  | 获取MySQL表字段
+[NamingPlugin](plugins/naming-plugin/naming-plugin.js) | name | - | -  | 命名风格转换
 
 ## 自定义插件
 
