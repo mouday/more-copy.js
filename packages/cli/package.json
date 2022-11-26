@@ -1,11 +1,17 @@
 {
-  "private": true,
-  "name": "more-copy",
-  "version": "3.0.0",
-  "description": "copy template generate code file",
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "^2.8.0"
+  "name": "@more-copy/cli",
+  "version": "1.0.0",
+  "description": "more-copy 命令行",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./src/index.js"
+  },
+  "bin": {
+    "mcp": "src/index.js"
+  },
+  "dependencies": {
+    "@more-copy/core": "workspace:*",
+    "commander": "^9.0.0"
   },
   "keywords": [
     "copy,generate,template,code,file,vue"

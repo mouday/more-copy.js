@@ -1,0 +1,19 @@
+{
+  "name": "@more-copy/time-plugin",
+  "version": "1.0.0",
+  "description": "基于 dayjs 的时间插件",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx mcp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.2"
+  },
+  "devDependencies": {
+    "@more-copy/cli": "workspace:*",
+    "@more-copy/console-plugin": "workspace:*"
+  }
+}

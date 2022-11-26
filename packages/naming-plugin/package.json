@@ -1,0 +1,19 @@
+{
+  "name": "@more-copy/naming-plugin",
+  "version": "1.0.0",
+  "description": "命名转换",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx mcp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "naming-style": "^1.0.1"
+  },
+  "devDependencies": {
+    "@more-copy/cli": "workspace:*",
+    "@more-copy/console-plugin": "workspace:*"
+  }
+}

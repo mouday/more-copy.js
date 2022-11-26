@@ -1,0 +1,15 @@
+{
+  "name": "@more-copy/console-plugin",
+  "version": "1.0.0",
+  "description": "用于输出当前data的值",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@more-copy/cli": "workspace:*"
+  }
+}

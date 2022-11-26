@@ -1,0 +1,16 @@
+{
+  "name": "@more-copy/write-data-plugin",
+  "version": "1.0.0",
+  "description": "输出json文件",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx mcp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@more-copy/cli": "workspace:*"
+  }
+}

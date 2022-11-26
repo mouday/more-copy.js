@@ -1,0 +1,20 @@
+{
+  "name": "@more-copy/nunjucks-plugin",
+  "version": "1.0.0",
+  "description": "模板渲染",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npx mcp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "@more-copy/cli": "workspace:*",
+    "@more-copy/console-plugin": "workspace:*",
+    "@more-copy/mkdir-plugin": "workspace:*"
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "private": true,
-  "name": "more-copy",
-  "version": "3.0.0",
+  "name": "@more-copy/core",
+  "version": "1.0.0",
   "description": "copy template generate code file",
+  "main": "./src/index.js",
   "dependencies": {},
-  "devDependencies": {
-    "prettier": "^2.8.0"
-  },
+  "devDependencies": {},
+  "scripts": {},
+  "bin": {},
   "keywords": [
     "copy,generate,template,code,file,vue"
   ],
