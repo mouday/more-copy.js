@@ -1,8 +1,8 @@
 # @more-copy
 
-![npm](https://img.shields.io/npm/v/more-copy)
-![npm](https://img.shields.io/npm/dw/more-copy)
-![node-current](https://img.shields.io/node/v/more-copy)
+[![npm](https://img.shields.io/npm/v/@more-copy/core)](https://www.npmjs.com/package/@more-copy/core)
+![npm](https://img.shields.io/npm/dw/@more-copy/core)
+![node-current](https://img.shields.io/node/v/@more-copy/core)
 
 基于 Node.js 的数据处理的工具
 
@@ -14,7 +14,8 @@
 
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
-- npm: [https://www.npmjs.com/package/more-copy](https://www.npmjs.com/package/more-copy)
+- npm: [https://www.npmjs.com/package/@more-copy/core](https://www.npmjs.com/package/@more-copy/core)
+- @more-copy[https://www.npmjs.com/org/more-copy](https://www.npmjs.com/org/more-copy)
 
 简单的处理步骤：
 
@@ -44,6 +45,11 @@ Options:
 ## 示例
 
 一个简单的示例
+
+安装插件
+```bash
+npm i @more-copy/console-plugin @more-copy/time-plugin
+```
 
 ```js
 // more-copy.config.js

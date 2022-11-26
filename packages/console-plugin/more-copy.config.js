@@ -1,6 +1,6 @@
 // more-copy.config.js
 
-const ConsolePlugin = require('../src/index.js')
+const ConsolePlugin = require('./src/index.js')
 
 module.exports = (options) => {
   console.log(options)

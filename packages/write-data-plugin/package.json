@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "输出json文件",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "test": "npx mcp"
   },

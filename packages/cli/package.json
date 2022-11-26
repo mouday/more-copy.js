@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "more-copy 命令行",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "test": "node ./src/index.js"
   },

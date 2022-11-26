@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "模板渲染",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "test": "npx mcp"
   },

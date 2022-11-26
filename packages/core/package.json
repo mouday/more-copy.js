@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "copy template generate code file",
   "main": "./src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {},
   "devDependencies": {},
   "scripts": {},

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "用于输出当前data的值",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
