@@ -4,13 +4,13 @@
 ![npm](https://img.shields.io/npm/dw/@more-copy/core)
 ![node-current](https://img.shields.io/node/v/@more-copy/core)
 
+## 简介
+
 基于 Node.js 的数据处理的工具
 
 利用 more-copy，可以很容易实现一个类似 VSCode、Pycharm、PHPStrom、Idea...中的代码片段，
 
 它依赖 Node.js，而不依赖任何编辑器，可以用于任何模式代码生成
-
-![](/img/@more-copy:core.png)
 
 - Home: [https://mouday.github.io/more-copy.js/](https://mouday.github.io/more-copy.js/)
 - github: [https://github.com/mouday/more-copy.js](https://github.com/mouday/more-copy.js)
@@ -22,14 +22,14 @@
 - 输入数据 data
 - 插件处理 plugins
 
+![](/img/@more-copy:core.png)
+
 ## 安装
 
 ```bash
 # 建议全局安装
 npm i @more-copy/cli -g
 ```
-
-## 命令行
 
 ```bash
 $ npx mcp -h
@@ -42,11 +42,10 @@ Options:
   -h, --help                display help for command
 ```
 
-## 示例
-
-一个简单的示例
+## 简单的示例
 
 安装插件
+
 ```bash
 npm i @more-copy/console-plugin @more-copy/time-plugin
 ```
@@ -88,6 +87,12 @@ ConsolePlugin: {
   }
 }
 ```
+
+## 和代码模板一起使用
+
+做一个快乐的 curd boy/girl
+
+[https://github.com/mouday/code-template](https://github.com/mouday/code-template)
 
 ## Plugin 插件
 
