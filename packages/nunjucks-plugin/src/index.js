@@ -13,11 +13,11 @@ class NunjucksPlugin {
     let input = this.options.input
     let output = this.options.output
 
-    let result = nunjucks.render(input, data)
-    
     if (fs.existsSync(output)) {
       console.warn('NunjucksPlugin warn: output file exists', output)
     } else {
+      let result = nunjucks.render(input, data)
+    
       fs.writeFileSync(output, result)
     }
   }

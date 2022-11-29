@@ -18,6 +18,7 @@ class ApiPlugin {
       let pascal_name = pascal(name)
 
       api = {
+        add: `add${pascal_name}`,
         getList: `get${pascal_name}List`,
         getById: `get${pascal_name}ById`,
         deleteById: `delete${pascal_name}ById`,

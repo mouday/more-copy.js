@@ -29,9 +29,12 @@ importers:
 
   packages/console-plugin:
     specifiers:
-      '@more-copy/cli': workspace:^1.0.0
+      '@more-copy/cli': workspace:*
     devDependencies:
       '@more-copy/cli': link:../cli
+
+  packages/core:
+    specifiers: {}
 
   packages/mkdir-plugin:
     specifiers:
@@ -54,14 +57,14 @@ importers:
     specifiers:
       '@more-copy/cli': workspace:*
       '@more-copy/console-plugin': workspace:*
-      '@more-copy/mkdir-plugin': workspace:^1.0.0
+      '@more-copy/mkdir-plugin': workspace:*
       nunjucks: ^3.2.3
     dependencies:
-      '@more-copy/mkdir-plugin': link:../mkdir-plugin
       nunjucks: 3.2.3
     devDependencies:
       '@more-copy/cli': link:../cli
       '@more-copy/console-plugin': link:../console-plugin
+      '@more-copy/mkdir-plugin': link:../mkdir-plugin
 
   packages/read-data-plugin:
     specifiers:
@@ -95,8 +98,8 @@ importers:
 
   packages/time-plugin:
     specifiers:
-      '@more-copy/cli': workspace:^1.0.0
-      '@more-copy/console-plugin': workspace:^1.0.0
+      '@more-copy/cli': workspace:*
+      '@more-copy/console-plugin': workspace:*
       dayjs: ^1.11.2
     dependencies:
       dayjs: 1.11.6
