@@ -1,6 +1,6 @@
 {
   "name": "@more-copy/api-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "api接口生成",
   "main": "src/index.js",
   "publishConfig": {
