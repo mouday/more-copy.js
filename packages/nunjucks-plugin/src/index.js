@@ -20,7 +20,9 @@ class NunjucksPlugin {
     if (fs.existsSync(output)) {
       console.warn('NunjucksPlugin warn: output file exists', output)
     } else {
-      let result = nunjucks.render(input, data)
+      let content = fs.readFileSync(input, { encoding: 'utf-8' })
+      
+      let result = nunjucks.renderString(content, data)
 
       // 自动创建输入目录
       if (!fs.existsSync(outputDir)) {
