@@ -9,6 +9,7 @@ module.exports = {
   data: {
     name: 'Tom',
     age: 23,
+    outputDir: 'out'
   },
 
   // 使用插件，有先后顺序
@@ -20,7 +21,7 @@ module.exports = {
     
     new NunjucksPlugin({
       input: 'template/index.html',
-      output: 'out/index.html',
+      output: (data)=>{return `${data.outputDir}/index.html`},
     }),
   ],
 }

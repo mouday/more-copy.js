@@ -14,11 +14,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "run": "^1.4.0",
+    "test": "^3.3.0"
   },
   "devDependencies": {
     "@more-copy/cli": "workspace:*",
     "@more-copy/console-plugin": "workspace:*",
-    "@more-copy/mkdir-plugin": "workspace:*"
+    "@more-copy/mkdir-plugin": "workspace:*",
+    "@more-copy/utils": "workspace:1.0.2"
   }
 }

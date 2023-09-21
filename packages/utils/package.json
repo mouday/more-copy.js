@@ -1,0 +1,21 @@
+{
+  "name": "@more-copy/utils",
+  "version": "1.0.2",
+  "description": "工具类",
+  "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "test": "npx mcp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

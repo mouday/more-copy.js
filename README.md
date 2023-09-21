@@ -147,3 +147,18 @@ module.exports = CustomPlugin
 
 - [more-copy.js V2.0](README-2.0.md)
 - [more-copy.js V3.0](README-3.0.md)
+
+## 备注
+
+运行单个脚本
+```bash
+pnpm  --filter <package_name> run test
+
+# eg:
+pnpm  --filter nunjucks-plugin run test
+```
+
+安装模块
+```
+pnpm add @more-copy/utils --filter @more-copy/nunjucks-plugin
+```
