@@ -159,6 +159,16 @@ pnpm  --filter nunjucks-plugin run test
 ```
 
 安装模块
-```
+```bash
 pnpm add @more-copy/utils --filter @more-copy/nunjucks-plugin
+```
+
+安装模块
+
+```bash
+# 全局暴露
+pnpm link -g
+
+# 安装到本地
+pnpm link -g @more-copy/utils
 ```

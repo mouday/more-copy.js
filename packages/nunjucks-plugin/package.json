@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nunjucks": "^3.2.3",
-    "@more-copy/utils": "workspace:*"
+    "@more-copy/utils": "workspace:*",
+    "nunjucks": "^3.2.3"
   },
   "devDependencies": {
     "@more-copy/cli": "workspace:*",
