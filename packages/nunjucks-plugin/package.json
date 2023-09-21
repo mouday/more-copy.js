@@ -1,6 +1,6 @@
 {
   "name": "@more-copy/nunjucks-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "模板渲染",
   "main": "src/index.js",
   "publishConfig": {
@@ -15,13 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "nunjucks": "^3.2.3",
-    "run": "^1.4.0",
-    "test": "^3.3.0"
+    "@more-copy/utils": "workspace:*"
   },
   "devDependencies": {
     "@more-copy/cli": "workspace:*",
     "@more-copy/console-plugin": "workspace:*",
-    "@more-copy/mkdir-plugin": "workspace:*",
-    "@more-copy/utils": "workspace:1.0.2"
+    "@more-copy/mkdir-plugin": "workspace:*"
   }
 }
