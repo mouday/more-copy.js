@@ -1,6 +1,6 @@
 {
   "name": "@more-copy/nunjucks-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "模板渲染",
   "main": "src/index.js",
   "publishConfig": {
