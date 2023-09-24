@@ -8,6 +8,7 @@ const {
   underscore,
   setence,
 } = require('naming-style')
+const {isFunction} = require('@more-copy/utils/type-util.js')
 
 /**
  * 命名风格
@@ -19,6 +20,10 @@ class NamingPlugin {
 
   apply(data) {
     let name = this.options.name
+
+    if(isFunction(name)){
+      name = name(data)
+    }
 
     let naming = {}
 

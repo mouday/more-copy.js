@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "naming-style": "^1.0.1"
+    "naming-style": "^1.0.1",
+    "@more-copy/utils": "workspace:*"
   },
   "devDependencies": {
     "@more-copy/cli": "workspace:*",

@@ -46,8 +46,10 @@ importers:
     specifiers:
       '@more-copy/cli': workspace:*
       '@more-copy/console-plugin': workspace:*
+      '@more-copy/utils': workspace:*
       naming-style: ^1.0.1
     dependencies:
+      '@more-copy/utils': link:../utils
       naming-style: 1.0.1
     devDependencies:
       '@more-copy/cli': link:../cli
